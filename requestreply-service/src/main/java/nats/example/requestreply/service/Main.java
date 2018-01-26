@@ -24,7 +24,7 @@ public class Main {
         conn.subscribe("example-service", message -> {
             String msg = new String(message.getData());
 
-            LOGGER.info(String.format("Received Message From %s: %s", message.getReplyTo(), message));
+            LOGGER.info(String.format("Received Message From %s: %s", message.getReplyTo(), msg));
 
             try {
                 if (msg.equalsIgnoreCase("hello")) {
