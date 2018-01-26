@@ -1,5 +1,7 @@
 # nats-requestreply-example
 
+An example of using [NATS](https://nats.io) for request/reply messaging.
+
 ## Bugs and Feedback
 For bugs, questions and discussions please use the [Github Issues](https://github.com/gregwhitaker/nats-requestreply-example/issues).
 
