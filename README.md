@@ -2,6 +2,15 @@
 
 An example of using [NATS](https://nats.io) for request-reply messaging.
 
+## Background
+NATS supports two flavors of request reply messaging: point-to-point or one-to-many. Point-to-point involves the fastest or first to respond. In a one-to-many exchange, you set a limit on the number of responses the requestor may receive.
+
+In a request-response exchange, publish request operation publishes a message with a reply subject expecting a response on that reply subject. You can request to automatically wait for a response inline.
+
+The request creates an inbox and performs a request call with the inbox reply and returns the first reply received. This is optimized in the case of multiple responses.
+
+More information can be found in the [NATS Documentation](https://nats.io/documentation/concepts/nats-req-rep/).
+
 ## Bugs and Feedback
 For bugs, questions and discussions please use the [Github Issues](https://github.com/gregwhitaker/nats-requestreply-example/issues).
 
