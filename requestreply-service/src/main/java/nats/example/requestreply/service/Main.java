@@ -28,9 +28,11 @@ public class Main {
 
             try {
                 if (msg.equalsIgnoreCase("hello")) {
-                    conn.publish(message.getReplyTo(), "World!".getBytes());
+                    String response = "World! from " + serviceId;
+                    conn.publish(message.getReplyTo(), response.getBytes());
                 } else {
-                    conn.publish(message.getReplyTo(), "I don't understand you!".getBytes());
+                    String response = "I don't understand you! from " + serviceId;
+                    conn.publish(message.getReplyTo(), response.getBytes());
                 }
             } catch (IOException e) {
                 e.printStackTrace();
