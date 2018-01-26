@@ -18,7 +18,33 @@ The examples require a local NATS server to be running. To start a NATS server a
 
     $ docker pull nats
     $ docker run -p 4222:4222 -p 6222:6222 -p 8222:8222 -d --name nats-main nats
+
+## Running the Example
+### Start the Request-Reply Client
+You can start the [Request-Reply Client](requestreply-client/README.md) using the following command:
+
+    $ ./gradlew :requestreply-client:run
     
+Once the client and service is running you will see messages similar to the following in the terminal:
+
+    [main] INFO nats.example.requestreply.client.Main - Starting NATS Example Request-Reply Client
+    [main] INFO nats.example.requestreply.client.Main - SENT: Hello
+    [main] INFO nats.example.requestreply.client.Main - RECEIVED: World! from 494ad392-e136-4c40-9d1f-69a2d75a5ce6
+
+### Start the Request-Reply Service
+You can start the [Request-Reply Service](requestreply-service/README.md) using the following command:
+
+    $ ./gradlew :requestreply-service:run
+
+Once the cliend and service is running you will see messages similar to the following in the terminal:
+
+    [main] INFO nats.example.requestreply.service.Main - Starting NATS Example Request-Reply Service 2c84095d-6a17-4db1-86c3-6d41eb247d9e
+    [jnats-subscriptions] INFO nats.example.requestreply.service.Main - Received Message From _INBOX.9VgixJvxwVp7Ehi8gej7GJ: Hello
+    [jnats-subscriptions] INFO nats.example.requestreply.service.Main - Received Message From _INBOX.9VgixJvxwVp7Ehi8gej7IK: Hello
+    [jnats-subscriptions] INFO nats.example.requestreply.service.Main - Received Message From _INBOX.9VgixJvxwVp7Ehi8gej7KL: Hello
+
+You can start multiple services and see that requests are automatically load-balanced between the instances.
+
 ## Bugs and Feedback
 For bugs, questions and discussions please use the [Github Issues](https://github.com/gregwhitaker/nats-requestreply-example/issues).
 
