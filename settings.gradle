@@ -1,0 +1,4 @@
+rootProject.name = 'nats-requestreply-example'
+include 'requestreply-client'
+include 'requestreply-service'
+

@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+sourceCompatibility = 1.8
+
+dependencies {
+    compile 'io.nats:jnats:1.0'
+    compile 'org.slf4j:slf4j-simple:1.7.25'
+}
+
+mainClassName = 'nats.example.requestreply.service.Main'
