@@ -22,16 +22,15 @@ public class Main {
         Connection conn = Nats.connect("nats://localhost:4222");
 
         conn.subscribe("example-service", message -> {
-            String replyTo = message.getReplyTo();
             String msg = new String(message.getData());
 
-            LOGGER.info(String.format("Received Message From %s: %s", replyTo, message));
+            LOGGER.info(String.format("Received Message From %s: %s", message.getReplyTo(), message));
 
             try {
                 if (msg.equalsIgnoreCase("hello")) {
-                    conn.publish("example-service", replyTo, "World!".getBytes());
+                    conn.publish(message.getReplyTo(), "World!".getBytes());
                 } else {
-                    conn.publish("example-service", replyTo, "I don't understand you!".getBytes());
+                    conn.publish(message.getReplyTo(), "I don't understand you!".getBytes());
                 }
             } catch (IOException e) {
                 e.printStackTrace();
