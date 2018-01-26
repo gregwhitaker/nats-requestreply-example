@@ -38,7 +38,7 @@ You can start the [Request-Reply Service](requestreply-service/README.md) using 
 
     $ ./gradlew :requestreply-service:run
 
-Once the cliend and service is running you will see messages similar to the following in the terminal:
+Once the client and service is running you will see messages similar to the following in the terminal:
 
     [main] INFO nats.example.requestreply.service.Main - Starting NATS Example Request-Reply Service 2c84095d-6a17-4db1-86c3-6d41eb247d9e
     [jnats-subscriptions] INFO nats.example.requestreply.service.Main - Received Message From _INBOX.9VgixJvxwVp7Ehi8gej7GJ: Hello
