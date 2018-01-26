@@ -1,4 +1,5 @@
 # nats-requestreply-example
+[![Build Status](https://travis-ci.org/gregwhitaker/nats-requestreply-example.svg?branch=master)](https://travis-ci.org/gregwhitaker/nats-requestreply-example)
 
 An example of using [NATS](https://nats.io) for request-reply messaging.
 
