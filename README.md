@@ -3,7 +3,8 @@
 
 An example of using [NATS](https://nats.io) for request-reply messaging.
 
-This example starts a service that responds with `World! from {server id}` when it receives a request with the message `hello`.
+This example starts a service that responds with `World! from {server id}` when it receives a request with the message `hello`. If you are running multiple service
+instances requests will be automatically load-balanced between them.
 
 ## Background
 NATS supports two flavors of request reply messaging: point-to-point or one-to-many. Point-to-point involves the fastest or first to respond. In a one-to-many exchange, you set a limit on the number of responses the requestor may receive.
